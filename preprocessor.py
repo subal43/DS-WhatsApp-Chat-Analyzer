@@ -20,8 +20,10 @@ def preprocess(data):
         if entry[1:]:
             users.append(entry[1])
             messages.append(entry[2])
+        else:
+            users.append("group notification")
+            messages.append(entry[0])
 
-    df = df.iloc[2:].reset_index(drop=True)
     df['user'] = users
     df['message'] = messages
 
