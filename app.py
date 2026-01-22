@@ -28,4 +28,9 @@ if uploaded_file is not None:
             else:
                 st.subheader(df[df['user'] == selected_user].shape[0])
 
-       
+        with col2:
+            st.subheader("Total words")
+            if selected_user == 'Overall':
+                st.subheader(df['message'].str.len().sum())
+            else:
+                st.subheader(df[df['user'] == selected_user]['message'].str.len().sum())
