@@ -17,4 +17,15 @@ if uploaded_file is not None:
     user_list.insert(0,"Overall")
     selected_user = st.sidebar.selectbox("Select a user",user_list)
 
-    
+    if st.sidebar.button("Analyze"):
+        #stats analysis
+        st.title("Top Statistics")
+        col1, col2, col3, col4 = st.columns(4)
+        with col1:
+            st.subheader("Total messages")
+            if selected_user == 'Overall':
+                st.subheader(df.shape[0])
+            else:
+                st.subheader(df[df['user'] == selected_user].shape[0])
+
+       
