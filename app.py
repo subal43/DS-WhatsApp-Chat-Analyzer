@@ -8,3 +8,13 @@ if uploaded_file is not None:
     data = uploaded_file.read().decode("utf-8")
     df = preprocessor.preprocess(data)
     st.dataframe(df)
+
+
+    #fetch unique users
+    user_list = df['user'].unique().tolist()
+    user_list.remove('group notification')
+    user_list.sort()
+    user_list.insert(0,"Overall")
+    selected_user = st.sidebar.selectbox("Select a user",user_list)
+
+    
