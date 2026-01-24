@@ -1,5 +1,6 @@
 import streamlit as st
 import preprocessor
+from urlextract import URLExtract
 st.title("WhatsApp Chat Analyzer")
 st.sidebar.header("Upload your chat file")
 uploaded_file = st.sidebar.file_uploader("Choose a file")
@@ -42,4 +43,13 @@ if uploaded_file is not None:
             else:
                 st.subheader(df[df['user'] == selected_user][df['message'] == '<Media omitted>\n'].shape[0])
 
-        
+        with col4:
+            extractor = URLExtract()
+            links = []
+            for message in df['message']:
+                links.extend(extractor.find_urls(message))
+            st.subheader("Total links shared")
+            if selected_user == 'Overall':
+                st.subheader(len(links))
+            else:
+                st.subheader(len(links[links.str.contains(selected_user)]))
