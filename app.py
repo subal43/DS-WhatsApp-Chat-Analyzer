@@ -34,3 +34,12 @@ if uploaded_file is not None:
                 st.subheader(df['message'].str.len().sum())
             else:
                 st.subheader(df[df['user'] == selected_user]['message'].str.len().sum())
+
+        with col3:
+            st.subheader("Total media shared")
+            if selected_user == 'Overall':
+                st.subheader(df[df['message'] == '<Media omitted>\n'].shape[0])
+            else:
+                st.subheader(df[df['user'] == selected_user][df['message'] == '<Media omitted>\n'].shape[0])
+
+        
