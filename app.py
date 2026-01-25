@@ -61,7 +61,6 @@ if uploaded_file is not None:
             with col1:
                 x = df['user'].value_counts().head()
                 fig, ax = plt.subplots()
-                fig.set_size_inches(10, 5)
                 ax.bar(x.index, x.values)
                 plt.xticks(rotation=90)
-            st.pyplot(fig)
+                st.pyplot(fig)
