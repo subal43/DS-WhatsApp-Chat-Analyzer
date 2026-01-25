@@ -64,3 +64,9 @@ if uploaded_file is not None:
                 ax.bar(x.index, x.values)
                 plt.xticks(rotation=90)
                 st.pyplot(fig)
+
+            with col2:
+                x = round(df['user'].value_counts().head()/df.shape[0]*100,2)
+                fig, ax = plt.subplots()
+                ax.pie(x, labels = x.index, autopct = '%1.1f%%')
+                st.pyplot(fig)
