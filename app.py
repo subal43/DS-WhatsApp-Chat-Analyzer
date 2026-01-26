@@ -2,6 +2,8 @@ import streamlit as st
 import preprocessor
 from urlextract import URLExtract
 from matplotlib import pyplot as plt
+import helper
+import pandas as pd
 st.title("WhatsApp Chat Analyzer")
 st.sidebar.header("Upload your chat file")
 uploaded_file = st.sidebar.file_uploader("Choose a file")
@@ -53,7 +55,9 @@ if uploaded_file is not None:
             if selected_user == 'Overall':
                 st.subheader(len(links))
             else:
-                st.subheader(len(links[links.str.contains(selected_user)]))
+                links = pd.Series(links)
+                st.subheader(len(links[links.str.contains(selected_user, regex=False)]))
+
 
         if selected_user == 'Overall':
             st.title("Most Active Users")
@@ -70,3 +74,5 @@ if uploaded_file is not None:
                 fig, ax = plt.subplots()
                 ax.pie(x, labels = x.index, autopct = '%1.1f%%')
                 st.pyplot(fig)
+
+       
