@@ -84,5 +84,6 @@ if uploaded_file is not None:
         #most common words
         st.title("Most Common Words")
         temp = df[df['user'] != "group notification"]
+        temp = temp[temp['message'] != '<Media omitted>\n']
         
         
