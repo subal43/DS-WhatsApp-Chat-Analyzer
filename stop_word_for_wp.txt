@@ -1,4 +1,4 @@
-"a, an, the, is, am, are, was, were, be, been, being,
+a, an, the, is, am, are, was, were, be, been, being,
 have, has, had, do, does, did, will, would, shall, should,
 may, might, must, can, could,
 i, me, my, mine, we, our, ours, you, your, yours, he, him, his, she, her, hers,
@@ -58,7 +58,7 @@ uff, oof, arey, are, re,
 hmm, um, umm,
 ok, okay, kk,
 huh, eh,
-❤️, 👍, 😂, 😅,"
+❤️, 👍, 😂, 😅
 
 
 
