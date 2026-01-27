@@ -3,3 +3,4 @@
 .virtual_documents/
 anaconda_projects/
 __pycache__
+!stop_word_for_wp.txt
