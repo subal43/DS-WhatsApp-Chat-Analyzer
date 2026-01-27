@@ -1,0 +1,64 @@
+"a, an, the, is, am, are, was, were, be, been, being,
+have, has, had, do, does, did, will, would, shall, should,
+may, might, must, can, could,
+i, me, my, mine, we, our, ours, you, your, yours, he, him, his, she, her, hers,
+it, its, they, them, their, theirs,
+this, that, these, those,
+and, or, but, if, because, as, until, while,
+of, at, by, for, with, about, against, between, into, through, during, before, after,
+to, from, up, down, in, out, on, off, over, under,
+again, further, then, once,
+here, there, when, where, why, how,
+all, any, both, each, few, more, most, other, some, such,
+no, nor, not, only, own, same, so, than, too, very,
+just, now, also, ok, okay, yes, yeah, hmm, oh,
+
+akta, ekta, ek, dui, tin,
+ami, amr, amar, amake,
+tumi, tmr, tomar, tomake,
+she, se, tar, take,
+amra, amader,
+tomra, tomader,
+ora, oder, tader,
+
+eta, ota, seta, eita, oita,
+ekhane, okhane, sekhane, kothay,
+kano, keno, kivabe, kemne,
+
+ki, kisu, kichu, kichui,
+sob, shob, shobai,
+
+ar, abar, tai, to, tao,
+jodi, jodi na, nahole,
+kintu, tobe, abar,
+
+na, nai, nei, noy,
+hobe, holo, hocche, hoise, hoilo,
+ase, asi, ashe, asilo,
+chilo, chilo na,
+
+korbo, korchi, korlam, kore, koro,
+jabo, jachi, gelam, gechi,
+khabo, khacchi, kheyechi,
+dekho, dekhi, dekhlam,
+
+valo, bhalo, kharap, beshi, kom,
+onek, onekta, ektu, ekto,
+
+age, pore, ekhon, tokhon, sobsomoy,
+aj, kal, porshu,
+
+bhai, bro, dada, vaiya,
+pls, plz, please,
+thik ase, thik ache, thik ase na,
+hmm, umm, acha, accha, achha,
+
+lol, lmao, haha, hehe, hihi,
+uff, oof, arey, are, re,
+hmm, um, umm,
+ok, okay, kk,
+huh, eh,
+❤️, 👍, 😂, 😅,"
+
+
+
