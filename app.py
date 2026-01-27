@@ -75,6 +75,7 @@ if uploaded_file is not None:
                 ax.pie(x, labels = x.index, autopct = '%1.1f%%')
                 st.pyplot(fig)
 
+        st.title("Word Cloud")
         df_wc = helper.create_wordcloud(selected_user, df)
         fig, ax = plt.subplots()
         ax.imshow(df_wc)
