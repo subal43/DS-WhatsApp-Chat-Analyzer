@@ -5,6 +5,7 @@ from matplotlib import pyplot as plt
 import helper
 import pandas as pd
 from collections import Counter
+import re
 st.title("WhatsApp Chat Analyzer")
 st.sidebar.header("Upload your chat file")
 uploaded_file = st.sidebar.file_uploader("Choose a file")
@@ -84,14 +85,7 @@ if uploaded_file is not None:
 
         #most common words
         st.title("Most Common Words")
-        stop_words = helper.stop_word_for_wp()
-        temp = df[df['user'] != "group notification"]
-        temp = temp[temp['message'] != '<Media omitted>\n']
-        words = []
-        for message in temp["message"]:
-            for word in message.lower().split():
-                if word not in stop_words:
-                    words.append(word)
-        st.dataframe(pd.DataFrame(Counter(words).most_common(10), columns = ['Word', 'Count']))
+        most_common_words = helper.most_common_words(selected_user, df)
+        st.dataframe(most_common_words)
         
         
