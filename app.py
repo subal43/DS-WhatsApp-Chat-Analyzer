@@ -64,30 +64,37 @@ if uploaded_file is not None:
         if selected_user == 'Overall':
             st.title("Most Active Users")
             col1, col2 = st.columns(2)
+            temp = df[df['user'] != "group notification"]
             with col1:
-                x = df['user'].value_counts().head()
+                x = temp['user'].value_counts().head()
                 fig, ax = plt.subplots()
                 ax.bar(x.index, x.values)
                 plt.xticks(rotation=90)
                 st.pyplot(fig)
 
             with col2:
-                x = round(df['user'].value_counts().head()/df.shape[0]*100,2)
+                x = round(temp['user'].value_counts().head()/temp.shape[0]*100,2)
                 fig, ax = plt.subplots()
                 ax.pie(x, labels = x.index, autopct = '%1.1f%%')
                 st.pyplot(fig)
 
         with open("stop_word_for_wp.txt", "r", encoding="utf-8") as f:
             stop_words = f.read()
+
         st.title("Word Cloud")
         df_wc = helper.create_wordcloud(selected_user, df, stop_words)
         fig, ax = plt.subplots()
         ax.imshow(df_wc)
         st.pyplot(fig)
 
-        #most common words
-        st.title("Most Common Words")
-        most_common_words = helper.most_common_words(selected_user, df, stop_words)
-        st.dataframe(most_common_words)
+        col1, col2 = st.columns(2)
         
+        with col1:
+            st.title("Most Common Words")
+            most_common_words = helper.most_common_words(selected_user, df, stop_words)
+            st.dataframe(most_common_words)
+        with col2:
+            st.title("Most Common Emojis")
+            emoji_df = helper.emoji_helper(selected_user, df)
+            st.dataframe(emoji_df)
         
