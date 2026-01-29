@@ -77,15 +77,17 @@ if uploaded_file is not None:
                 ax.pie(x, labels = x.index, autopct = '%1.1f%%')
                 st.pyplot(fig)
 
+        with open("stop_word_for_wp.txt", "r", encoding="utf-8") as f:
+            stop_words = f.read()
         st.title("Word Cloud")
-        df_wc = helper.create_wordcloud(selected_user, df)
+        df_wc = helper.create_wordcloud(selected_user, df, stop_words)
         fig, ax = plt.subplots()
         ax.imshow(df_wc)
         st.pyplot(fig)
 
         #most common words
         st.title("Most Common Words")
-        most_common_words = helper.most_common_words(selected_user, df)
+        most_common_words = helper.most_common_words(selected_user, df, stop_words)
         st.dataframe(most_common_words)
         
         
