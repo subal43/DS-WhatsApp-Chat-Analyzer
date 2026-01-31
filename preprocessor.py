@@ -35,5 +35,6 @@ def preprocess(data):
     df['hour'] = df['date'].dt.hour
     df['minute'] = df['date'].dt.minute
     df["month_num"] = df["date"].dt.month
+    df["day_name"] = df["date"].dt.day_name()
 
     return df
