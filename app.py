@@ -97,4 +97,11 @@ if uploaded_file is not None:
             st.title("Most Common Emojis")
             emoji_df = helper.emoji_helper(selected_user, df)
             st.dataframe(emoji_df)
-        
+
+    st.title("Monthly Timeline")
+    timeline = helper.monthly_timeline(selected_user, df)
+    fig, ax = plt.subplots()
+    ax.plot(timeline['time'], timeline['message'])
+    plt.xticks(rotation=90)
+    st.pyplot(fig)
+    
