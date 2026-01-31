@@ -52,3 +52,8 @@ def monthly_timeline(selected_user, df):
         times.append(timeline["month"][i]+" - "+str(timeline["year"][i]))
     timeline["time"] = times
     return timeline
+
+def week_activity(selected_user, df):
+    if selected_user != 'Overall':
+        df = df[df['user'] == selected_user]
+    return df["day_name"].value_counts()

@@ -98,10 +98,22 @@ if uploaded_file is not None:
             emoji_df = helper.emoji_helper(selected_user, df)
             st.dataframe(emoji_df)
 
-    st.title("Monthly Timeline")
-    timeline = helper.monthly_timeline(selected_user, df)
-    fig, ax = plt.subplots()
-    ax.plot(timeline['time'], timeline['message'])
-    plt.xticks(rotation=90)
-    st.pyplot(fig)
+        st.title("Monthly Timeline")
+        timeline = helper.monthly_timeline(selected_user, df)
+        fig, ax = plt.subplots()
+        ax.plot(timeline['time'], timeline['message'])
+        plt.xticks(rotation=90)
+        st.pyplot(fig)
+    
+
+        st.title("Weekly Activity")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.title("Most busy day")
+            week_activity = helper.week_activity(selected_user, df)
+            fig, ax = plt.subplots()
+            ax.bar(week_activity.index, week_activity.values)
+            plt.xticks(rotation=90)
+            st.pyplot(fig)
+        
     
