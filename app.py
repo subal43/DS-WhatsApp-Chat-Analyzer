@@ -6,6 +6,7 @@ import helper
 import pandas as pd
 from collections import Counter
 import re
+import seaborn as sns
 st.title("WhatsApp Chat Analyzer")
 st.sidebar.header("Upload your chat file")
 uploaded_file = st.sidebar.file_uploader("Choose a file")
@@ -116,4 +117,9 @@ if uploaded_file is not None:
             plt.xticks(rotation=90)
             st.pyplot(fig)
         
-    
+        with col2:
+            st.title("Most busy month")
+            month_activity = helper.monthly_activity(selected_user, df)
+            fig, ax = plt.subplots()
+            sns.countplot(month_activity["month"])
+            st.pyplot(fig)

@@ -57,3 +57,8 @@ def week_activity(selected_user, df):
     if selected_user != 'Overall':
         df = df[df['user'] == selected_user]
     return df["day_name"].value_counts()
+
+def monthly_activity(selected_user, df):
+    if selected_user != 'Overall':
+        df = df[df['user'] == selected_user]
+    return df
