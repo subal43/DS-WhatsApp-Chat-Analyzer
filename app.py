@@ -123,3 +123,9 @@ if uploaded_file is not None:
             fig, ax = plt.subplots()
             sns.countplot(month_activity["month"])
             st.pyplot(fig)
+
+        st.title("Heatmap")
+        user_heatmap = helper.user_heatmap(selected_user, df)
+        fig, ax = plt.subplots()
+        sns.heatmap(user_heatmap)
+        st.pyplot(fig)
